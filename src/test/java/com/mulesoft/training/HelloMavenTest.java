@@ -11,8 +11,8 @@ import org.mule.tck.junit4.rule.DynamicPort;
 public class HelloMavenTest extends FunctionalTestCase {
 
 	@Rule
-	public DynamicPort myPort = new DynamicPort("http.port"); 
-	
+	public DynamicPort myPort = new DynamicPort("http.port");
+
 	@Test
 	public void mavenFlowReturnsHelloMaven() throws Exception {
 		System.out.println("\n\nTestcase#1 -------------> Http port = " + myPort.getNumber() + "\n\n");
@@ -20,8 +20,10 @@ public class HelloMavenTest extends FunctionalTestCase {
 	}
 
 	@Override
-	protected String getConfigFile() {
-		return "maven-project.xml";
+	protected String[] getConfigFiles() {
+		String[] files = { "maven-project.xml", "common-resources.xml" };
+		return files;
+
 	}
 
 	@Test
