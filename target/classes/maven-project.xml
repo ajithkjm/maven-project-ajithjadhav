@@ -29,6 +29,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 		<set-payload
 			value="#['Hello Maven']"
 			doc:name="Set Payload" />
+        <logger message="test log" level="INFO" doc:name="Logger"/>
 	</flow>
 
 
